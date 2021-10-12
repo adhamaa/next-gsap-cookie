@@ -5,14 +5,11 @@ import Link from "next/link";
 import gsap from "gsap";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Modal from "../components/Modal";
-import Toggler from "../components/Toggler";
 export default function Home() {
   return (
     <>
       <Navbar transparent />
       <main>
-        {/* <Modal /> */}
         <div className="relative flex items-center content-center justify-center pt-16 pb-32 min-h-screen-75">
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
