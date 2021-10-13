@@ -1,8 +1,7 @@
 import "../styles/globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import CookieBanner from "../components/CookieBanner";
-import Modal2 from "../components/Modal2";
-import Modal from "../components/Modal";
+import Modal2 from "../components/Modal";
 
 function MyApp({ Component, pageProps }) {
   return (

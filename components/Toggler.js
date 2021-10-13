@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
-export default function Toggler() {
-  const [enabled, setEnabled] = useState(false);
+export default function Toggler({ checked, disabled }) {
+  const [enabled, setEnabled] = useState(checked);
 
   return (
     <div className="py-4">
       <div className="relative inline-block w-10 mr-2 align-middle transition duration-200 ease-in select-none">
         <input
+          defaultChecked={checked && "checked"}
+          disabled={disabled && true}
           type="checkbox"
           name="toggle"
           id="toggle"

@@ -29,7 +29,7 @@ const Tabs = () => {
                 role="tablist"
               >
                 {/* <i className="mr-1 text-base fas fa-space-shuttle"></i> */}
-                Preferences
+                Essential
               </a>
             </li>
             <li className="flex-auto mr-2 -mb-px text-center last:mr-0">
@@ -48,8 +48,8 @@ const Tabs = () => {
                 href="#link2"
                 role="tablist"
               >
-                {/* <i className="mr-1 text-base fas fa-cog"></i> */}
-                Statistics
+                {/* <i className="mr-1 text-base fas fa-space-shuttle"></i> */}
+                Preferences
               </a>
             </li>
             <li className="flex-auto mr-2 -mb-px text-center last:mr-0">
@@ -68,6 +68,26 @@ const Tabs = () => {
                 href="#link3"
                 role="tablist"
               >
+                {/* <i className="mr-1 text-base fas fa-cog"></i> */}
+                Statistics
+              </a>
+            </li>
+            <li className="flex-auto mr-2 -mb-px text-center last:mr-0">
+              <a
+                className={
+                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  (openTab === 4
+                    ? "text-white bg-blueGray-600"
+                    : "text-blueGray-600 bg-white")
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpenTab(4);
+                }}
+                data-toggle="tab"
+                href="#link4"
+                role="tablist"
+              >
                 {/* <i className="mr-1 text-base fas fa-briefcase"></i>  */}
                 Marketing
               </a>
@@ -79,37 +99,41 @@ const Tabs = () => {
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Necessitatibus, ad.
                     <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
+                    <br /> Lorem ipsum dolor sit amet.
                   </p>
-                  <Toggler />
+                  <Toggler checked={true} disabled />
                 </div>
 
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Reprehenderit, blanditiis.
                     <br />
                     <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
+                    Lorem ipsum dolor sit amet.
                   </p>
                   <Toggler />
                 </div>
 
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <p>
-                    Efficiently unleash cross-media information without
-                    cross-media value. Quickly maximize timely deliverables for
-                    real-time schemas.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Reprehenderit, blanditiis.
                     <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
+                    <br /> Lorem ipsum dolor sit amet.
+                  </p>
+                  <Toggler />
+                </div>
+
+                <div className={openTab === 4 ? "block" : "hidden"} id="link3">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Reprehenderit, blanditiis.
+                    <br />
+                    <br /> Lorem ipsum dolor sit amet.
                   </p>
                   <Toggler />
                 </div>

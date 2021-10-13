@@ -1,5 +1,5 @@
 {
-  "name": "next-gsap",
+  "name": "next-gsap-cookie",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@elgorditosalsero/react-gtm-hook": "^2.0.8",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
