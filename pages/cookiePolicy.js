@@ -458,8 +458,8 @@ export default function Cookie() {
       >
         <span style={{ fontFamily: '"Arial",sans-serif', color: "#434343" }}>
           Our cookies are “first-party cookies”, and can be either permanent or
-          temporary. These are necessary cookies, without which the Site won't
-          work properly or be able to provide certain features and
+          temporary. These are necessary cookies, without which the Site
+          won&apos;t work properly or be able to provide certain features and
           functionalities. Some of these may be manually disabled in your
           browser, but may affect the functionality of the Site.
         </span>

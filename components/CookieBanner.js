@@ -3,24 +3,24 @@ import Link from "next/link";
 import Modal from "./Modal";
 import useCookie from "../hooks/useCookie";
 
-export default function CookieBanner({ user }) {
-  const [isOpen, setIsOpen] = React.useState((user = true));
+export default function CookieBanner() {
   const [cookie_consent, updateCookie, removeCookie] = useCookie(
     "cookie_consent",
     "false"
   );
   const [ad_storage, updateAd, removeAd] = useCookie("ad_storage", "false");
-  console.log('ad_storage:', ad_storage)
+  // const [isOpen, setIsOpen] = React.useState(cookie_consent);
+  console.log("ad_storage:", ad_storage);
   console.log("cookie_consent:", cookie_consent);
 
   const writeCookie = () => {
     updateCookie("true");
-    setIsOpen(false);
+    // setIsOpen("true");
   };
 
   return (
     <>
-      {isOpen && (
+      {cookie_consent === "false" && (
         <div className="fixed p-4 bg-gray-100 shadow-lg z-90 bottom-4 right-1 lg:right-4">
           <h2 className="block mb-4 text-lg font-bold leading-tight text-gray-600 lg:text-xl">
             Cookie Policy

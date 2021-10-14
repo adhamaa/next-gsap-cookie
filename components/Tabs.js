@@ -104,7 +104,7 @@ const Tabs = () => {
                     <br />
                     <br /> Lorem ipsum dolor sit amet.
                   </p>
-                  <Toggler checked={true} disabled />
+                  <Toggler id="1" name="toggle_1" checked={true} disabled />
                 </div>
 
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
@@ -115,7 +115,7 @@ const Tabs = () => {
                     <br />
                     Lorem ipsum dolor sit amet.
                   </p>
-                  <Toggler />
+                  <Toggler id="2" name="toggle_2" />
                 </div>
 
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
@@ -125,7 +125,7 @@ const Tabs = () => {
                     <br />
                     <br /> Lorem ipsum dolor sit amet.
                   </p>
-                  <Toggler />
+                  <Toggler id="3" name="toggle_3" />
                 </div>
 
                 <div className={openTab === 4 ? "block" : "hidden"} id="link3">
@@ -135,7 +135,7 @@ const Tabs = () => {
                     <br />
                     <br /> Lorem ipsum dolor sit amet.
                   </p>
-                  <Toggler />
+                  <Toggler id="4" name="toggle_4" />
                 </div>
               </div>
             </div>
