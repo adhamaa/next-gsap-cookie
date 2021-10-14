@@ -1,15 +1,31 @@
-import React from "react";
+import { useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+
 export default function Home() {
+  const triggerRef = useRef(null);
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
+
+  const tl = gsap.timeline();
+
+  useEffect(() => {
+    gsap.from(triggerRef.current, { y: -200, opacity: 0 });
+    tl.from(titleRef.current, { y: -200, opacity: 0 }, 1);
+    tl.from(textRef.current, { y: -200, opacity: 0 });
+  });
+
   return (
     <>
       <Navbar transparent />
-      <main>
+      <main ref={triggerRef}>
         <div className="relative flex items-center content-center justify-center pt-16 pb-32 min-h-screen-75">
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
@@ -26,10 +42,13 @@ export default function Home() {
             <div className="flex flex-wrap items-center">
               <div className="w-full px-4 ml-auto mr-auto text-center lg:w-6/12">
                 <div className="pr-12">
-                  <h1 className="text-5xl font-semibold text-white">
+                  <h1
+                    ref={titleRef}
+                    className="text-5xl font-semibold text-white"
+                  >
                     Lorem ipsum dolor sit amet.
                   </h1>
-                  <p className="mt-4 text-lg text-blueGray-200">
+                  <p ref={textRef} className="mt-4 text-lg text-blueGray-200">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
                     magni provident veritatis?
                   </p>

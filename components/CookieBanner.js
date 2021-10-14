@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
 import useCookie from "../hooks/useCookie";
@@ -9,6 +9,7 @@ export default function CookieBanner() {
     "false"
   );
   const [ad_storage, updateAd, removeAd] = useCookie("ad_storage", "false");
+
   // const [isOpen, setIsOpen] = React.useState(cookie_consent);
   console.log("ad_storage:", ad_storage);
   console.log("cookie_consent:", cookie_consent);
@@ -29,7 +30,7 @@ export default function CookieBanner() {
             <p className="mb-5 font-medium text-gray-600">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi
               corrupti deserunt.&nbsp;
-              <Link href="/cookiePolicy">
+              <Link href="/cookie-policy">
                 <a className="underline">Cookie Policy</a>
               </Link>
             </p>
