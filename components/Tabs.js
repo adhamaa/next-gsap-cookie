@@ -1,4 +1,3 @@
-import { ChartBarIcon } from "@heroicons/react/outline";
 import React from "react";
 import Toggler from "./Toggler";
 

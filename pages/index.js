@@ -2,24 +2,65 @@ import { useEffect, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const triggerRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
+  const imgRef = useRef(null);
+  const sectionRef = useRef(null);
 
-  const tl = gsap.timeline();
+  const tl = gsap.timeline(); //timeline
+
+  const onEnter = ({ currentTarget }) => {
+    gsap.to(currentTarget, {
+      // backgroundColor: "#e77614",
+      scale: 1.2,
+    });
+  };
+
+  const onLeave = ({ currentTarget }) => {
+    gsap.to(currentTarget, {
+      // backgroundColor: "#28a92b",
+      scale: 1,
+    });
+  };
 
   useEffect(() => {
-    gsap.from(triggerRef.current, { y: -200, opacity: 0 });
-    tl.from(titleRef.current, { y: -200, opacity: 0 }, 1);
-    tl.from(textRef.current, { y: -200, opacity: 0 });
+    tl.from(triggerRef.current, { y: -200, opacity: 0 })
+      .from(titleRef.current, { y: -200, opacity: 0 })
+      .from(textRef.current, { y: -200, opacity: 0 })
+      .from(imgRef.current, {
+        // scrollTrigger: {
+        //   trigger: imgRef.current,
+        //   start: "20px 80%",
+        //   end: "100px 80%",
+        //   toggleActions: "restart pause resume none",
+        //   markers: true,
+        //   pin: true,
+        //   scrub: 1,
+        // },
+        y: -400,
+        opacity: 0,
+        duration: 1,
+      });
+    // .to(sectionRef.current, {
+    // scrollTrigger: {
+    //   trigger: sectionRef.current,
+    //   start: "top top",
+    //   // end: "100px 80%",
+    //   // toggleActions: "restart pause resume none",
+    //   markers: true,
+    //   pin: true,
+    //   scrub: 1,
+    // },
+    // y: -100,
+    // });
   });
 
   return (
@@ -80,7 +121,11 @@ export default function Home() {
         <section className="pb-20 -mt-24 bg-blueGray-200">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap">
-              <div className="w-full px-4 pt-6 text-center lg:pt-12 md:w-4/12">
+              <div
+                className="w-full px-4 pt-6 text-center lg:pt-12 md:w-4/12"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
                 <div className="relative flex flex-col w-full min-w-0 mb-8 break-words bg-white rounded-lg shadow-lg">
                   <div className="flex-auto px-4 py-5">
                     <div className="inline-flex items-center justify-center w-12 h-12 p-3 mb-5 text-center text-white bg-red-400 rounded-full shadow-lg">
@@ -95,7 +140,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-full px-4 text-center md:w-4/12">
+              <div
+                className="w-full px-4 text-center md:w-4/12"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
                 <div className="relative flex flex-col w-full min-w-0 mb-8 break-words bg-white rounded-lg shadow-lg">
                   <div className="flex-auto px-4 py-5">
                     <div className="inline-flex items-center justify-center w-12 h-12 p-3 mb-5 text-center text-white rounded-full shadow-lg bg-lightBlue-400">
@@ -112,7 +161,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="w-full px-4 pt-6 text-center md:w-4/12">
+              <div
+                className="w-full px-4 pt-6 text-center md:w-4/12"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
+              >
                 <div className="relative flex flex-col w-full min-w-0 mb-8 break-words bg-white rounded-lg shadow-lg">
                   <div className="flex-auto px-4 py-5">
                     <div className="inline-flex items-center justify-center w-12 h-12 p-3 mb-5 text-center text-white rounded-full shadow-lg bg-emerald-400">
@@ -130,7 +183,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center mt-32">
+            <div ref={sectionRef} className="flex flex-wrap items-center mt-32">
               <div className="w-full px-4 ml-auto mr-auto md:w-5/12">
                 <div className="inline-flex items-center justify-center w-16 h-16 p-3 mb-6 text-center bg-white rounded-full shadow-lg text-blueGray-500">
                   <i className="text-xl fas fa-user-friends"></i>
@@ -157,7 +210,10 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="w-full px-4 ml-auto mr-auto md:w-4/12">
+              <div
+                ref={imgRef}
+                className="w-full px-4 ml-auto mr-auto md:w-4/12"
+              >
                 <div className="relative flex flex-col w-full min-w-0 mb-6 break-words bg-white rounded-lg shadow-lg bg-blueGray-700">
                   <img
                     alt="..."

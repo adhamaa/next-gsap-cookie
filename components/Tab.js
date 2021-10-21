@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { Tab } from '@headlessui/react'
+import { useState } from "react";
+import { Tab } from "@headlessui/react";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Tabs() {
@@ -10,15 +10,15 @@ export default function Tabs() {
     Recent: [
       {
         id: 1,
-        title: 'Does drinking coffee make you smarter?',
-        date: '5h ago',
+        title: "Does drinking coffee make you smarter?",
+        date: "5h ago",
         commentCount: 5,
         shareCount: 2,
       },
       {
         id: 2,
         title: "So you've bought coffee... now what?",
-        date: '2h ago',
+        date: "2h ago",
         commentCount: 3,
         shareCount: 2,
       },
@@ -26,15 +26,15 @@ export default function Tabs() {
     Popular: [
       {
         id: 1,
-        title: 'Is tech making coffee better or worse?',
-        date: 'Jan 7',
+        title: "Is tech making coffee better or worse?",
+        date: "Jan 7",
         commentCount: 29,
         shareCount: 16,
       },
       {
         id: 2,
-        title: 'The most innovative things happening in coffee',
-        date: 'Mar 19',
+        title: "The most innovative things happening in coffee",
+        date: "Mar 19",
         commentCount: 24,
         shareCount: 12,
       },
@@ -42,20 +42,20 @@ export default function Tabs() {
     Trending: [
       {
         id: 1,
-        title: 'Ask Me Anything: 10 answers to your questions about coffee',
-        date: '2d ago',
+        title: "Ask Me Anything: 10 answers to your questions about coffee",
+        date: "2d ago",
         commentCount: 9,
         shareCount: 5,
       },
       {
         id: 2,
         title: "The worst advice we've ever heard about coffee",
-        date: '4d ago',
+        date: "4d ago",
         commentCount: 1,
         shareCount: 2,
       },
     ],
-  })
+  });
 
   return (
     <div className="w-full px-4">
@@ -66,11 +66,11 @@ export default function Tabs() {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  'w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg',
-                  'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+                  "w-full py-2.5 text-sm leading-5 font-medium text-blue-700 rounded-lg",
+                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60",
                   selected
-                    ? 'bg-white shadow'
-                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                    ? "bg-white shadow"
+                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                 )
               }
             >
@@ -83,8 +83,8 @@ export default function Tabs() {
             <Tab.Panel
               key={idx}
               className={classNames(
-                'bg-white rounded-xl p-3',
-                'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60'
+                "bg-white rounded-xl p-3",
+                "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
               )}
             >
               <ul>
@@ -108,8 +108,8 @@ export default function Tabs() {
                     <a
                       href="#"
                       className={classNames(
-                        'absolute inset-0 rounded-md',
-                        'focus:z-10 focus:outline-none focus:ring-2 ring-blue-400'
+                        "absolute inset-0 rounded-md",
+                        "focus:z-10 focus:outline-none focus:ring-2 ring-blue-400"
                       )}
                     />
                   </li>
@@ -120,5 +120,5 @@ export default function Tabs() {
         </Tab.Panels>
       </Tab.Group>
     </div>
-  )
+  );
 }
