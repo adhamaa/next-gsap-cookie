@@ -18,8 +18,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <GTMProvider state={gtmParams}>
       <Component {...pageProps} />
-      {/* <CookieBanner /> */}
-      <CookieConsent
+      <CookieBanner />
+      {/* <CookieConsent
         containerClasses="text-xl text-center"
         location="bottom"
         buttonText="Sure man!!"
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
       >
         This website uses cookies to enhance the user experience.{" "}
         <span style={{ fontSize: "10px" }}>This bit of text is smaller :O</span>
-      </CookieConsent>
+      </CookieConsent> */}
     </GTMProvider>
   );
 }
