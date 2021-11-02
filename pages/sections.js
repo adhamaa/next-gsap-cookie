@@ -58,7 +58,7 @@ function Sections() {
       onEnterBack: () => console.log("Enter Back"),
       onLeaveBack: () => console.log("Leave Back"),
     });
-  }, []);
+  }, [tl]);
 
   return (
     <div ref={containerRef}>

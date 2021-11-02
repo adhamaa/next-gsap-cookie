@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import CookieBanner from "../components/CookieBanner";
 import { GTMProvider } from "@elgorditosalsero/react-gtm-hook";
 import CookieConsent, { Cookies } from "react-cookie-consent";
-
+import ConsentBanner from "../components/ConsentBanner";
 import { useEffect } from "react";
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -18,7 +18,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <GTMProvider state={gtmParams}>
       <Component {...pageProps} />
-      <CookieBanner />
+      {/* <CookieBanner /> */}
+      <ConsentBanner />
       {/* <CookieConsent
         containerClasses="text-xl text-center"
         location="bottom"
