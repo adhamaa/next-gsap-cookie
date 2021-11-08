@@ -1,5 +1,4 @@
 import { memo, useCallback, useState } from "react";
-import classnames from "classnames";
 // import noop from 'no-op';
 
 const copy = {
@@ -57,7 +56,7 @@ function CookieBanner({
   );
 
   return (
-    <div className={classnames(className)}>
+    <div className={`${className}`}>
       <p className="text-sm leading-4 text-white mb-7">
         {children || defaultText}
       </p>
